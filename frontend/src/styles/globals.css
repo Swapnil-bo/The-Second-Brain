@@ -1,0 +1,288 @@
+/* Description: Global styles — Tailwind imports, Neural Dark CSS custom properties,
+   custom scrollbars, React Flow overrides, and base typography. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== NEURAL DARK DESIGN TOKENS ===== */
+
+:root {
+  /* Backgrounds */
+  --bg-void:      #050508;
+  --bg-surface:   #0d0d14;
+  --bg-elevated:  #13131f;
+  --bg-hover:     #1a1a2e;
+
+  /* Borders */
+  --border-dim:   #1e1e32;
+  --border-glow:  #2d2d52;
+
+  /* Text */
+  --text-primary:  #e8e8f0;
+  --text-secondary:#8888aa;
+  --text-dim:      #44445a;
+
+  /* Accent — Electric Violet */
+  --accent:        #7c3aed;
+  --accent-bright: #a855f7;
+  --accent-glow:   rgba(124, 58, 237, 0.3);
+  --accent-subtle: rgba(124, 58, 237, 0.08);
+
+  /* Entity Type Colors */
+  --entity-concept:    #6366f1;
+  --entity-person:     #f59e0b;
+  --entity-technology: #10b981;
+  --entity-book:       #ef4444;
+  --entity-place:      #06b6d4;
+  --entity-event:      #f97316;
+  --entity-organization: #06b6d4;
+  --entity-unknown:    #6b7280;
+
+  /* Status */
+  --status-success: #10b981;
+  --status-warning: #f59e0b;
+  --status-error:   #ef4444;
+  --status-info:    #6366f1;
+
+  /* Graph */
+  --edge-default:  rgba(99, 102, 241, 0.4);
+  --edge-hover:    rgba(168, 85, 247, 0.9);
+  --node-shadow:   0 0 20px rgba(124, 58, 237, 0.2);
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'Instrument Sans', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+}
+
+/* ===== BASE ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--accent-glow);
+  color: var(--text-primary);
+}
+
+/* ===== CUSTOM SCROLLBARS ===== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-dim);
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-dim) transparent;
+}
+
+/* ===== APP SHELL ===== */
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--bg-void);
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.graph-canvas-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== REACT FLOW OVERRIDES ===== */
+
+.react-flow {
+  background: var(--bg-void) !important;
+}
+
+.react-flow__background {
+  opacity: 0.5;
+}
+
+/* Controls */
+.react-flow__controls {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--border-dim) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background: var(--bg-elevated) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border-dim) !important;
+  fill: var(--text-secondary) !important;
+  width: 32px !important;
+  height: 32px !important;
+  transition: all 0.15s ease;
+}
+
+.react-flow__controls-button:hover {
+  background: var(--bg-hover) !important;
+  fill: var(--accent-bright) !important;
+}
+
+.react-flow__controls-button:last-child {
+  border-bottom: none !important;
+}
+
+/* MiniMap */
+.react-flow__minimap {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-dim) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.react-flow__minimap-mask {
+  fill: rgba(5, 5, 8, 0.85) !important;
+}
+
+/* Attribution */
+.react-flow__attribution {
+  background: transparent !important;
+}
+
+.react-flow__attribution a {
+  color: var(--text-dim) !important;
+  font-size: 9px !important;
+}
+
+/* Edges */
+.react-flow__edge-path {
+  stroke: var(--edge-default);
+  transition: stroke 0.2s ease;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: var(--edge-hover);
+}
+
+/* ===== PANEL OVERLAY ===== */
+
+.panel-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 100%;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border-dim);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ===== GLASS EFFECT ===== */
+
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(13, 13, 20, 0.9),
+    rgba(19, 19, 31, 0.7)
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-dim);
+}
+
+/* ===== GLOW EFFECTS ===== */
+
+.glow-accent {
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 0 20px var(--accent-glow),
+    0 0 40px rgba(124, 58, 237, 0.1);
+}
+
+.glow-pulse {
+  animation: glow-breathe 3s ease-in-out infinite;
+}
+
+@keyframes glow-breathe {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.35), 0 0 60px rgba(124, 58, 237, 0.1);
+  }
+}
+
+/* ===== ANIMATED EDGE DASH ===== */
+
+.edge-animated-dash {
+  stroke-dasharray: 6, 4;
+  animation: dash-flow 1.5s linear infinite;
+}
+
+@keyframes dash-flow {
+  0%   { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0;  }
+}
+
+/* ===== EMPTY STATE NEURAL SVG ===== */
+
+.neural-bg {
+  background-size: 300% 300%;
+  background-image: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.03) 0%,
+    rgba(99, 102, 241, 0.05) 25%,
+    rgba(124, 58, 237, 0.02) 50%,
+    rgba(168, 85, 247, 0.04) 75%,
+    rgba(124, 58, 237, 0.03) 100%
+  );
+  animation: neural-trace 6s ease infinite;
+}
+
+@keyframes neural-trace {
+  0%   { background-position: 0% 50%;   }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%;   }
+}
