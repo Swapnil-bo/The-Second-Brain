@@ -323,12 +323,6 @@ secondbrain/
 
 ---
 
-## License
-
-MIT — use it, fork it, build on it.
-
----
-
 <div align="center">
 
 *Built with obsession. One file at a time.*
