@@ -1,0 +1,18 @@
+# Backend
+backend/.env
+backend/chroma_db/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+*.egg-info/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# General
+.DS_Store
+*.log
+Thumbs.db
+.vscode/
+.idea/
