@@ -1,3 +1,4 @@
+--extra-index-url https://pypi.org/simple/
 fastapi==0.115.0
 uvicorn[standard]==0.32.0
 python-dotenv==1.0.1
@@ -12,4 +13,5 @@ networkx==3.4.2
 slowapi==0.1.9
 pydantic==2.7.4
 pydantic-core==2.18.4
+pydantic-settings==2.3.4
 python-multipart==0.0.12
