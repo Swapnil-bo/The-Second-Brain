@@ -13,5 +13,4 @@ langchain-text-splitters==0.2.4
 networkx==3.4.2
 slowapi==0.1.9
 pydantic==2.7.4
-pydantic-core==2.18.4
 python-multipart==0.0.12
