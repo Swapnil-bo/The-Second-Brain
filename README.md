@@ -312,7 +312,7 @@ secondbrain/
 
 ## Built By
 
-**Swapnil Hazra** — AI Engineer & Vibe Coder
+**Swapnil Hazra** — AI Engineer
 `BWU/BTA/23/568` · Brainware University
 
 [![GitHub](https://img.shields.io/badge/GitHub-Swapnil--bo-181717?style=flat-square&logo=github)](https://github.com/Swapnil-bo)
