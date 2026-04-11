@@ -319,8 +319,6 @@ secondbrain/
 [![Twitter](https://img.shields.io/badge/X-@SwapnilHazra4-000000?style=flat-square&logo=x)](https://x.com/SwapnilHazra4)
 [![Portfolio](https://img.shields.io/badge/Portfolio-swapnilhazra.vercel.app-7c3aed?style=flat-square)](https://swapnilhazra.vercel.app)
 
-*Part of 100 Days of Vibe Coding.*
-
 ---
 
 <div align="center">
